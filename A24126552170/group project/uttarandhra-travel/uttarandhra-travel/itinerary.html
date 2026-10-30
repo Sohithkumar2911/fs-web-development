@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Trip Planner | Uttarandhra Odyssey Itinerary Builder</title>
+  <meta name="description" content="Generate customized multi-day itineraries for Visakhapatnam, Vizianagaram, and Srikakulam with instant budget calculator and printable schedule.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    @media print {
+      .site-header, .site-footer, .hero-section, .planner-form-grid, .no-print, .nav-actions, .btn-primary {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .planner-panel {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+      }
+      .timeline-day-card {
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-group">
+        <div class="logo-emblem">
+          <i class="fas fa-compass"></i>
+        </div>
+        <div class="logo-text">
+          <h1>Uttarandhra</h1>
+          <span>Coastal Odyssey</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="visakhapatnam.html" class="nav-link">Visakhapatnam</a></li>
+          <li><a href="vizianagaram.html" class="nav-link">Vizianagaram</a></li>
+          <li><a href="srikakulam.html" class="nav-link">Srikakulam</a></li>
+          <li><a href="itinerary.html" class="nav-link active">Trip Planner</a></li>
+          <li><a href="culture.html" class="nav-link">Culture & Food</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="action-btn" id="theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <button class="action-btn" id="wishlist-open-btn" aria-label="Saved Wishlist" title="View Saved Places">
+          <i class="far fa-heart"></i>
+          <span class="badge-count wishlist-count" style="display: none;">0</span>
+        </button>
+
+        <button class="btn-book-cta" data-trigger-booking>
+          <i class="fas fa-calendar-check"></i>
+          <span class="btn-text">Book Tour</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero-section" style="min-height: 55vh;">
+    <div class="hero-background">
+      <img 
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=80" 
+        alt="Coastal Odyssey Trip Planner" 
+        class="hero-bg-img"
+      >
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-magic"></i> Interactive Generator
+        </div>
+        <h1 class="hero-title">
+          Custom Itinerary & <span>Budget Planner</span>
+        </h1>
+        <p class="hero-subtitle">
+          Select your travel duration, chosen districts, and preferred pace. We instantly craft an optimized day-by-day itinerary with verified travel timings and transparent cost estimates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PLANNER ENGINE ================= -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="planner-panel">
+        <div class="no-print" style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
+          <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-primary);">
+            Configure Your Journey
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">
+            Adjust the preferences below to generate your personalized coastal and heritage schedule.
+          </p>
+        </div>
+
+        <form id="itinerary-generator-form" class="no-print">
+          <div class="planner-form-grid">
+            <!-- Duration -->
+            <div class="form-group">
+              <label><i class="far fa-calendar-alt"></i> Trip Duration</label>
+              <select id="plan-days-select" class="form-control">
+                <option value="1">1 Day Express</option>
+                <option value="2">2 Days Weekend Trip</option>
+                <option value="3" selected>3 Days Golden Triangle</option>
+                <option value="5">5 Days Grand Odyssey</option>
+                <option value="7">7 Days Complete Immersion</option>
+              </select>
+            </div>
+
+            <!-- Travel Style -->
+            <div class="form-group">
+              <label><i class="fas fa-compass"></i> Travel Theme</label>
+              <select id="plan-style-select" class="form-control">
+                <option value="all-round" selected>All-Round Balanced Highlights</option>
+                <option value="spiritual">Spiritual & Temple Pilgrimage</option>
+                <option value="nature-beach">Coast, Beaches & Eastern Ghats</option>
+                <option value="heritage">Royal Forts & Ancient Buddhist Relics</option>
+              </select>
+            </div>
+
+            <!-- Budget Level -->
+            <div class="form-group">
+              <label><i class="fas fa-wallet"></i> Budget Tier</label>
+              <select id="plan-budget-tier" class="form-control">
+                <option value="budget">Backpacker / Budget (~₹1,600/day)</option>
+                <option value="moderate" selected>Comfort / Moderate (~₹3,200/day)</option>
+                <option value="luxury">Premium Heritage (~₹7,200/day)</option>
+              </select>
+            </div>
+
+            <!-- Number of Travelers -->
+            <div class="form-group">
+              <label><i class="fas fa-users"></i> Travelers Count</label>
+              <input type="number" id="plan-travelers-count" class="form-control" value="2" min="1" max="15">
+            </div>
+          </div>
+
+          <!-- Cities Selection -->
+          <div style="margin-bottom: 2rem;">
+            <label style="font-size: 0.88rem; font-weight: 700; margin-bottom: 0.75rem; display: block; color: var(--text-primary);">
+              <i class="fas fa-map-marked-alt"></i> Select Districts to Include:
+            </label>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+              <label class="checkbox-label">
+                <input type="checkbox" id="check-vizag" checked>
+                <span><strong>Visakhapatnam</strong> (Beaches & Submarine)</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="check-vizianagaram" checked>
+                <span><strong>Vizianagaram</strong> (Gajapati Forts & Bow Theme Park)</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="check-srikakulam" checked>
+                <span><strong>Srikakulam</strong> (Sun Temple & Kalingapatnam)</span>
+              </label>
+            </div>
+          </div>
+        </form>
+
+        <!-- Dynamic Budget Summary Card -->
+        <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted);">
+                Estimated Total Trip Cost
+              </span>
+              <div id="estimated-total-budget" style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary); line-height: 1.1;">
+                ₹19,200
+              </div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">
+                Estimated for all travelers (Includes stay, internal transfers, food, and entry passes)
+              </span>
+            </div>
+
+            <div class="no-print" style="display: flex; gap: 0.75rem;">
+              <button id="print-itinerary-btn" class="btn-secondary" style="font-size: 0.88rem; padding: 0.65rem 1.25rem; color: var(--text-primary); border-color: var(--border-color);">
+                <i class="fas fa-print"></i> Print Itinerary
+              </button>
+              <button class="btn-primary" style="font-size: 0.88rem; padding: 0.65rem 1.25rem;" data-trigger-booking>
+                <i class="fas fa-check-circle"></i> Book This Plan
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Breakdown Details -->
+          <div id="budget-breakdown-details"></div>
+        </div>
+
+        <!-- Generated Day-by-Day Timeline -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-primary);">
+              Your Day-by-Day Schedule
+            </h3>
+            <span style="font-size: 0.82rem; color: var(--color-emerald); font-weight: 700;">
+              <i class="fas fa-sync-alt"></i> Real-time Generated
+            </span>
+          </div>
+
+          <div class="timeline-container" id="generated-timeline">
+            <!-- Injected dynamically via js/planner.js -->
+          </div>
+        </div>
+
+        <!-- Interactive Travel Packing Checklist -->
+        <div style="margin-top: 3.5rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-primary); margin-bottom: 1rem;">
+            <i class="fas fa-clipboard-check" style="color: var(--color-primary);"></i> Trip Preparation Checklist
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; font-size: 0.88rem;">
+            <label class="checkbox-label"><input type="checkbox" checked> Government ID (Aadhaar/Passport) for submarine and museum tickets</label>
+            <label class="checkbox-label"><input type="checkbox" checked> Traditional modest temple attire for Simhachalam & Arasavalli</label>
+            <label class="checkbox-label"><input type="checkbox" checked> Comfortable walking shoes for Borra Caves & Salihundam steps</label>
+            <label class="checkbox-label"><input type="checkbox"> Advance Vistadome coach booking on IRCTC (Vizag to Araku)</label>
+            <label class="checkbox-label"><input type="checkbox"> Camera and power bank for beach sunsets and hilltop panoramas</label>
+            <label class="checkbox-label"><input type="checkbox"> Cash for rural artisan purchases (Ponduru Khadi and Bobbili)</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BOOKING MODAL ================= -->
+  <div class="modal-overlay" id="booking-modal-overlay">
+    <div class="modal-container" style="max-width: 580px;">
+      <button class="modal-close-btn" id="booking-close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <div class="modal-body" style="padding: 2.25rem;">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <span class="section-badge">Direct Reservation</span>
+          <h2 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--text-primary); margin-top: 0.25rem;">
+            Lock In Your Custom Tour
+          </h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Our local tour specialists will coordinate your AC cab, heritage passes, and beach resort bookings.
+          </p>
+        </div>
+
+        <form id="booking-inquiry-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="booking-name-input" class="form-control" placeholder="e.g. Radhika Rao" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="booking-phone-input" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label>Email Address *</label>
+            <input type="email" id="booking-email-input" class="form-control" placeholder="radhika@example.com" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div class="form-group">
+              <label>Circuit</label>
+              <select id="booking-city-select" class="form-control">
+                <option value="all" selected>All 3 Districts</option>
+                <option value="visakhapatnam">Vizag & Araku</option>
+                <option value="vizianagaram">Vizianagaram Heritage</option>
+                <option value="srikakulam">Srikakulam Temples</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Duration</label>
+              <select id="booking-days-input" class="form-control">
+                <option value="2">2 Days</option>
+                <option value="3" selected>3 Days</option>
+                <option value="5">5 Days</option>
+                <option value="7">7 Days</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="form-group">
+              <label>Travelers</label>
+              <input type="number" id="booking-guests-input" class="form-control" value="2" min="1" max="25">
+            </div>
+            <div class="form-group">
+              <label>Package Quote</label>
+              <div id="booking-est-price" style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary); padding: 0.6rem 0;">
+                ₹13,200
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fas fa-paper-plane"></i> Finalize Trip Quote
+          </button>
+        </form>
+
+        <div id="booking-confirmation-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WISHLIST DRAWER ================= -->
+  <aside class="wishlist-drawer" id="wishlist-drawer">
+    <div class="wishlist-header">
+      <div class="wishlist-title">
+        <i class="fas fa-heart" style="color: var(--color-accent);"></i>
+        <span>Saved Destinations</span>
+      </div>
+      <button id="wishlist-close-btn" style="font-size: 1.25rem; color: var(--text-secondary);" aria-label="Close Wishlist">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="wishlist-body" id="wishlist-items-container"></div>
+  </aside>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Uttarandhra Odyssey</h2>
+          <p>Planning intelligent, effortless vacations across Visakhapatnam, Vizianagaram, and Srikakulam.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="visakhapatnam.html">Visakhapatnam</a></li>
+            <li><a href="vizianagaram.html">Vizianagaram</a></li>
+            <li><a href="srikakulam.html">Srikakulam</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Travel Guides</h4>
+          <ul class="footer-links">
+            <li><a href="culture.html">Food & Delicacies</a></li>
+            <li><a href="culture.html#crafts">Artisan Crafts</a></li>
+            <li><a href="index.html#explorer-section">Attraction Explorer</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-title">Concierge</h4>
+          <p><i class="fas fa-phone-alt"></i> 1800-425-45454</p>
+          <p><i class="fas fa-envelope"></i> planner@uttarandhraodyssey.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Uttarandhra Odyssey. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>

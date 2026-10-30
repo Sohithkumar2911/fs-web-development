@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uttarandhra Odyssey | Official Travel Portal for Visakhapatnam, Vizianagaram & Srikakulam</title>
+  <meta name="description" content="Discover the sunlit coast, royal citadels, and ancient sun temples of North Coastal Andhra Pradesh. Complete travel guides for Visakhapatnam, Vizianagaram, and Srikakulam.">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-group">
+        <div class="logo-emblem">
+          <i class="fas fa-compass"></i>
+        </div>
+        <div class="logo-text">
+          <h1>Uttarandhra</h1>
+          <span>Coastal Odyssey</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="visakhapatnam.html" class="nav-link">Visakhapatnam</a></li>
+          <li><a href="vizianagaram.html" class="nav-link">Vizianagaram</a></li>
+          <li><a href="srikakulam.html" class="nav-link">Srikakulam</a></li>
+          <li><a href="itinerary.html" class="nav-link">Trip Planner</a></li>
+          <li><a href="culture.html" class="nav-link">Culture & Food</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="action-btn" id="theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <button class="action-btn" id="wishlist-open-btn" aria-label="Saved Wishlist" title="View Saved Places">
+          <i class="far fa-heart"></i>
+          <span class="badge-count wishlist-count" style="display: none;">0</span>
+        </button>
+
+        <button class="btn-book-cta" data-trigger-booking>
+          <i class="fas fa-calendar-check"></i>
+          <span class="btn-text">Book Tour</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO BANNER ================= -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img 
+        src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1800&q=80" 
+        alt="Bay of Bengal Coastline Visakhapatnam" 
+        class="hero-bg-img"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80';"
+      >
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-map-marked-alt"></i> Andhra Pradesh Tourism Special Circuit
+        </div>
+        <h2 class="hero-title">
+          Explore the Jewels of <span>Northern Coastal Andhra</span>
+        </h2>
+        <p class="hero-subtitle">
+          From the roaring waves and submarine museum of <strong>Visakhapatnam</strong>, to the royal palaces and bow-shaped temples of <strong>Vizianagaram</strong>, and the ancient sun shrines of <strong>Srikakulam</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#explorer-section" class="btn-primary">
+            <i class="fas fa-compass"></i> Explore Attractions
+          </a>
+          <a href="itinerary.html" class="btn-secondary">
+            <i class="fas fa-route"></i> Plan Custom Itinerary
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>3</h3>
+            <p>Historic Districts</p>
+          </div>
+          <div class="stat-item">
+            <h3>150+ km</h3>
+            <p>Golden Coastline</p>
+          </div>
+          <div class="stat-item">
+            <h3>25+</h3>
+            <p>Iconic Landmarks</p>
+          </div>
+          <div class="stat-item">
+            <h3>4.8 ★</h3>
+            <p>Traveler Rating</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THREE CITIES SHOWCASE ================= -->
+  <section class="section-padding" style="background: var(--bg-surface-elevated);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Featured Destinations</span>
+        <h2 class="section-title">The Tri-City Coastal Corridor</h2>
+        <p class="section-subtitle">
+          Three unique districts, each offering its own blend of heritage, ocean scenery, spiritual power, and culinary treasures.
+        </p>
+      </div>
+
+      <div class="city-grid">
+        <!-- Visakhapatnam Card -->
+        <article class="city-card">
+          <div class="city-card-img-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80" 
+              alt="Visakhapatnam City and Coastline" 
+              class="city-card-img"
+              onerror="this.onerror=null;this.src='https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Kailasagiri.jpg/1280px-Kailasagiri.jpg';"
+            >
+            <span class="city-card-badge"><i class="fas fa-anchor"></i> Coastal Metropolis</span>
+            <span class="city-card-telugu">విశాఖపట్నం</span>
+          </div>
+          <div class="city-card-body">
+            <h3 class="city-card-title">Visakhapatnam</h3>
+            <span class="city-card-alias">The City of Destiny</span>
+            <p class="city-card-desc">
+              Home to the famed INS Kursura Submarine Museum, Blue Flag certified Rushikonda Beach, hilltop views at Kailasagiri, and the gateway to misty Araku Valley.
+            </p>
+            <div class="city-card-meta">
+              <span><i class="fas fa-umbrella-beach"></i> 45 km Beaches</span>
+              <span><i class="fas fa-clock"></i> 3 - 4 Days Stay</span>
+            </div>
+            <a href="visakhapatnam.html" class="city-card-btn">
+              Explore Visakhapatnam <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Vizianagaram Card -->
+        <article class="city-card">
+          <div class="city-card-img-wrap">
+            <img 
+              src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Viznm_kota.jpg/1280px-Viznm_kota.jpg" 
+              alt="Vizianagaram Fort" 
+              class="city-card-img"
+              onerror="this.onerror=null;this.src='https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Ramanarayanam_.jpg/1280px-Ramanarayanam_.jpg';"
+            >
+            <span class="city-card-badge"><i class="fas fa-chess-rook"></i> Royal Citadels</span>
+            <span class="city-card-telugu">విజయనగరం</span>
+          </div>
+          <div class="city-card-body">
+            <h3 class="city-card-title">Vizianagaram</h3>
+            <span class="city-card-alias">The City of Victory & Vidyalu</span>
+            <p class="city-card-desc">
+              Steeped in royal Gajapati history, the monumental Ramanarayanam bow-shaped spiritual theme park, the heroic citadel of Bobbili, and the GI-tagged Bobbili Veena craft.
+            </p>
+            <div class="city-card-meta">
+              <span><i class="fas fa-monument"></i> 2 Historic Forts</span>
+              <span><i class="fas fa-clock"></i> 2 Days Stay</span>
+            </div>
+            <a href="vizianagaram.html" class="city-card-btn">
+              Explore Vizianagaram <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Srikakulam Card -->
+        <article class="city-card">
+          <div class="city-card-img-wrap">
+            <img 
+              src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Arasavilli_Sri_Suryanarayanamurty_Temple_of_Srikakulam%2C_Andhra_Pradesh_%283%29.jpg/1280px-Arasavilli_Sri_Suryanarayanamurty_Temple_of_Srikakulam%2C_Andhra_Pradesh_%283%29.jpg" 
+              alt="Arasavalli Sun Temple Srikakulam" 
+              class="city-card-img"
+              onerror="this.onerror=null;this.src='https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Salihundam_Historic_Buddhist_Remains_3_by_GPuvvada_2010.jpg/1280px-Salihundam_Historic_Buddhist_Remains_3_by_GPuvvada_2010.jpg';"
+            >
+            <span class="city-card-badge"><i class="fas fa-sun"></i> Spiritual Cradle</span>
+            <span class="city-card-telugu">శ్రీకాకుళం</span>
+          </div>
+          <div class="city-card-body">
+            <h3 class="city-card-title">Srikakulam</h3>
+            <span class="city-card-alias">The Ancient Kalinga Frontier</span>
+            <p class="city-card-desc">
+              World-renowned for the 7th-century Arasavalli Sun Temple, the unique Sri Kurmam Tortoise Temple, serene Kalingapatnam Beach lighthouse, and Mahatma Gandhi's beloved Ponduru Khadi.
+            </p>
+            <div class="city-card-meta">
+              <span><i class="fas fa-gopuram"></i> Rare Sun Shrines</span>
+              <span><i class="fas fa-clock"></i> 2 Days Stay</span>
+            </div>
+            <a href="srikakulam.html" class="city-card-btn">
+              Explore Srikakulam <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE ATTRACTION EXPLORER ================= -->
+  <section class="section-padding" id="explorer-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Interactive Explorer</span>
+        <h2 class="section-title">Discover Landmarks & Natural Wonders</h2>
+        <p class="section-subtitle">
+          Filter through pristine beaches, historic citadels, sacred shrines, and hill retreats across all three districts.
+        </p>
+      </div>
+
+      <!-- Explorer Controls -->
+      <div class="explorer-controls">
+        <div class="search-input-wrapper">
+          <i class="fas fa-search search-icon"></i>
+          <input 
+            type="text" 
+            id="explorer-search-input" 
+            class="search-input" 
+            placeholder="Search attractions (e.g., Kursura, Ramanarayanam, Arasavalli, Borra Caves, Beach...)"
+          >
+        </div>
+
+        <div class="filter-row">
+          <!-- City Filter Pills -->
+          <div class="filter-pills-group">
+            <button class="filter-btn active" data-filter-city="all">
+              <i class="fas fa-globe"></i> All Cities
+            </button>
+            <button class="filter-btn" data-filter-city="visakhapatnam">
+              <i class="fas fa-water"></i> Visakhapatnam
+            </button>
+            <button class="filter-btn" data-filter-city="vizianagaram">
+              <i class="fas fa-archway"></i> Vizianagaram
+            </button>
+            <button class="filter-btn" data-filter-city="srikakulam">
+              <i class="fas fa-sun"></i> Srikakulam
+            </button>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-pills-group">
+            <button class="filter-btn active" data-filter-category="all">All Categories</button>
+            <button class="filter-btn" data-filter-category="beaches">Beaches & Coast</button>
+            <button class="filter-btn" data-filter-category="heritage">Heritage & Forts</button>
+            <button class="filter-btn" data-filter-category="spiritual">Spiritual & Temples</button>
+            <button class="filter-btn" data-filter-category="nature">Hills & Nature</button>
+          </div>
+
+          <!-- Sorting -->
+          <div>
+            <select id="explorer-sort-select" class="filter-select">
+              <option value="rating-desc">Sort: Highest Rated</option>
+              <option value="reviews-desc">Sort: Most Reviewed</option>
+              <option value="name-asc">Sort: Name (A-Z)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attraction Cards Dynamic Grid -->
+      <div class="attractions-grid" id="attractions-grid">
+        <!-- Populated via js/main.js from js/data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CURATED TRAVEL CIRCUITS ================= -->
+  <section class="section-padding" style="background: var(--bg-surface-elevated);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Ready-Made Circuits</span>
+        <h2 class="section-title">Popular Multi-City Itineraries</h2>
+        <p class="section-subtitle">
+          Seamless routes designed by regional experts to save travel time and experience the finest sights.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        <!-- 3-Day Circuit -->
+        <div style="background: var(--bg-surface); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+          <span style="background: var(--color-primary-light); color: var(--color-primary-dark); font-size: 0.75rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); text-transform: uppercase;">
+            3-Day Classic Route
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin: 1rem 0 0.5rem; color: var(--text-primary);">
+            The Coastal & Royal Highlights
+          </h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Ideal for a long weekend trip covering Vizag's submarine museum, Vizianagaram's Ramanarayanam park, and Srikakulam's Arasavalli Sun Temple.
+          </p>
+          <ul style="list-style: none; font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><i class="fas fa-check-circle" style="color: var(--color-emerald);"></i> <strong>Day 1:</strong> Vizag RK Beach, Submarine Museum & Kailasagiri</li>
+            <li><i class="fas fa-check-circle" style="color: var(--color-emerald);"></i> <strong>Day 2:</strong> Vizianagaram Gajapati Fort & Ramanarayanam Bow</li>
+            <li><i class="fas fa-check-circle" style="color: var(--color-emerald);"></i> <strong>Day 3:</strong> Arasavalli Sun Temple, Sri Kurmam & Kalingapatnam</li>
+          </ul>
+          <a href="itinerary.html" class="btn-primary" style="font-size: 0.88rem; padding: 0.65rem 1.25rem;">
+            Customize 3-Day Plan <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 5-Day Circuit -->
+        <div style="background: var(--bg-surface); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+          <span style="background: var(--color-secondary-light); color: var(--color-secondary); font-size: 0.75rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); text-transform: uppercase;">
+            5-Day Grand Odyssey
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin: 1rem 0 0.5rem; color: var(--text-primary);">
+            Eastern Ghats, Forts & Coastline
+          </h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Comprehensive immersion including the Vistadome mountain train to Araku Valley, subterranean Borra Caves, Ponduru Khadi artisans, and Bobbili heritage.
+          </p>
+          <ul style="list-style: none; font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><i class="fas fa-check-circle" style="color: var(--color-emerald);"></i> <strong>Days 1-2:</strong> Vizag coastline & Araku Valley Vistadome train</li>
+            <li><i class="fas fa-check-circle" style="color: var(--color-emerald);"></i> <strong>Day 3:</strong> Borra Caves, Tatipudi Lake & Vizianagaram Fort</li>
+            <li><i class="fas fa-check-circle" style="color: var(--color-emerald);"></i> <strong>Days 4-5:</strong> Ramanarayanam, Ponduru Khadi & Sun Temple</li>
+          </ul>
+          <a href="itinerary.html" class="btn-secondary" style="font-size: 0.88rem; padding: 0.65rem 1.25rem; color: var(--text-primary); border-color: var(--border-color);">
+            Customize 5-Day Plan <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GASTRONOMY & STREET DELICACIES ================= -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Taste the Region</span>
+        <h2 class="section-title">Iconic Coastal & Tribal Delicacies</h2>
+        <p class="section-subtitle">
+          Savor time-honored authentic recipes found exclusively in the kitchens and street markets of Uttarandhra.
+        </p>
+      </div>
+
+      <div class="cuisine-grid">
+        <!-- Bongu Chicken -->
+        <div class="cuisine-card">
+          <img 
+            src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" 
+            alt="Araku Bamboo Chicken" 
+            class="cuisine-img"
+          >
+          <div class="cuisine-body">
+            <span class="cuisine-tag">Araku Hill Specialty</span>
+            <h3 class="cuisine-title">Araku Bongu Chicken</h3>
+            <p class="cuisine-desc">Country chicken marinated in wild forest herbs, stuffed in green bamboo stalks and roasted over wood coals without oil.</p>
+            <div class="cuisine-try"><i class="fas fa-utensils"></i> Try at: Araku valley hills & Vizag Dhabas</div>
+          </div>
+        </div>
+
+        <!-- Coastal Fish Curry -->
+        <div class="cuisine-card">
+          <img 
+            src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" 
+            alt="Andhra Fish Curry" 
+            class="cuisine-img"
+          >
+          <div class="cuisine-body">
+            <span class="cuisine-tag">Coastal Classic</span>
+            <h3 class="cuisine-title">Coastal Chepala Pulusu</h3>
+            <p class="cuisine-desc">Fresh catch simmered in a rich, tangy tamarind, garlic, and fresh green chilli gravy slow-cooked in traditional earthenware.</p>
+            <div class="cuisine-try"><i class="fas fa-utensils"></i> Try at: Rushikonda Beach & Sea Inn</div>
+          </div>
+        </div>
+
+        <!-- Madugula Halwa -->
+        <div class="cuisine-card">
+          <img 
+            src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=800&q=80" 
+            alt="Madugula Halwa" 
+            class="cuisine-img"
+          >
+          <div class="cuisine-body">
+            <span class="cuisine-tag">Century-Old Sweet</span>
+            <h3 class="cuisine-title">Madugula Halwa</h3>
+            <p class="cuisine-desc">Handcrafted from pure wheat milk extract, golden desi ghee, and dry fruits. Delivers an unforgettable melt-in-mouth caramel texture.</p>
+            <div class="cuisine-try"><i class="fas fa-utensils"></i> Try at: Madugula & Vizag sweet stalls</div>
+          </div>
+        </div>
+
+        <!-- Bobbili Sweets -->
+        <div class="cuisine-card">
+          <img 
+            src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" 
+            alt="Bobbili Bellam Jilebi" 
+            class="cuisine-img"
+          >
+          <div class="cuisine-body">
+            <span class="cuisine-tag">Vizianagaram Heritage</span>
+            <h3 class="cuisine-title">Bobbili Bellam Jilebi</h3>
+            <p class="cuisine-desc">Crisp coils soaked in golden organic sugarcane jaggery syrup instead of white sugar, served piping hot with pure ghee.</p>
+            <div class="cuisine-try"><i class="fas fa-utensils"></i> Try at: Bobbili Bazar & Vizianagaram</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="culture.html" class="btn-primary">
+          <i class="fas fa-drumstick-bite"></i> Explore Full Food & Culture Guide
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRAVEL TIPS & CONNECTIVITY BANNER ================= -->
+  <section class="section-padding" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+        <div>
+          <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 0.8rem; font-weight: 700; padding: 0.35rem 0.9rem; border-radius: var(--radius-full); text-transform: uppercase;">
+            Essential Travel Tips
+          </span>
+          <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin: 1rem 0 1rem; color: #ffffff;">
+            Best Time to Visit the Coast
+          </h2>
+          <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
+            The golden period to travel across Visakhapatnam, Vizianagaram, and Srikakulam is from <strong>October to March</strong>. Enjoy cool ocean breezes, mild daytime temperatures (18°C – 28°C), and colorful regional celebrations such as the Sirimanotsavam and Ratha Saptami.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div style="background: rgba(255, 255, 255, 0.08); padding: 1rem; border-radius: var(--radius-md); flex: 1; min-width: 140px;">
+              <i class="fas fa-plane" style="color: #38bdf8; font-size: 1.25rem; margin-bottom: 0.5rem; display: block;"></i>
+              <strong style="font-size: 0.9rem; display: block;">VTZ Airport</strong>
+              <span style="font-size: 0.78rem; color: #94a3b8;">Daily flights to all metros</span>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.08); padding: 1rem; border-radius: var(--radius-md); flex: 1; min-width: 140px;">
+              <i class="fas fa-train" style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 0.5rem; display: block;"></i>
+              <strong style="font-size: 0.9rem; display: block;">NH-16 & Rail</strong>
+              <span style="font-size: 0.78rem; color: #94a3b8;">Smooth 4-lane expressway</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-lg); padding: 2rem; backdrop-filter: blur(8px);">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Quick Travel Advice</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; font-size: 0.88rem; color: #e2e8f0;">
+            <li style="display: flex; gap: 0.75rem;">
+              <i class="fas fa-tshirt" style="color: #38bdf8; margin-top: 0.2rem;"></i>
+              <span><strong>Attire:</strong> Modest traditional attire (dhoti, saree, or kurta) is appreciated when entering Simhachalam, Arasavalli, and Sri Kurmam temples.</span>
+            </li>
+            <li style="display: flex; gap: 0.75rem;">
+              <i class="fas fa-ticket-alt" style="color: #38bdf8; margin-top: 0.2rem;"></i>
+              <span><strong>Vistadome Booking:</strong> Book your Vizag to Araku train tickets at least 3-4 weeks in advance on IRCTC to secure the glass-domed observatory seats.</span>
+            </li>
+            <li style="display: flex; gap: 0.75rem;">
+              <i class="fas fa-shopping-bag" style="color: #38bdf8; margin-top: 0.2rem;"></i>
+              <span><strong>Artisan Souvenirs:</strong> Support local master artisans by purchasing authentic GI Ponduru Khadi and miniature Bobbili Veenas directly at source.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ATTRACTION DETAILS MODAL ================= -->
+  <div class="modal-overlay" id="attraction-modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="" alt="" class="modal-hero-img" id="modal-hero-img">
+      <div class="modal-body">
+        <div class="modal-tag-row">
+          <span class="badge-city-tag" id="modal-city-tag" style="position: static;">City</span>
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase;" id="modal-category-tag">Category</span>
+        </div>
+        <h2 class="modal-title" id="modal-title">Attraction Name</h2>
+        <div id="modal-rating" style="margin-bottom: 1.25rem; font-size: 0.9rem; font-weight: 700; color: var(--text-primary);"></div>
+
+        <div class="modal-grid-info">
+          <div class="info-item">
+            <h4>Timings</h4>
+            <p id="modal-timings">-</p>
+          </div>
+          <div class="info-item">
+            <h4>Entry Fee</h4>
+            <p id="modal-entry-fee">-</p>
+          </div>
+          <div class="info-item">
+            <h4>Location</h4>
+            <p id="modal-location">-</p>
+          </div>
+        </div>
+
+        <h3 class="modal-section-title">Overview & History</h3>
+        <p id="modal-full-desc" style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.5rem;"></p>
+
+        <h3 class="modal-section-title">Key Highlights</h3>
+        <ul class="modal-highlights-list" id="modal-highlights"></ul>
+
+        <div class="modal-tip-box" id="modal-tips"></div>
+
+        <div class="modal-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" id="modal-map-link">
+            <i class="fas fa-directions"></i> Get Google Maps Directions
+          </a>
+          <button class="btn-secondary" style="color: var(--text-primary); border-color: var(--border-color);" data-trigger-booking>
+            <i class="fas fa-calendar-check"></i> Inquire Guided Tour
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BOOKING & INQUIRY MODAL ================= -->
+  <div class="modal-overlay" id="booking-modal-overlay">
+    <div class="modal-container" style="max-width: 580px;">
+      <button class="modal-close-btn" id="booking-close-btn" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body" style="padding: 2.25rem;">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <span class="section-badge">Direct Reservation</span>
+          <h2 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--text-primary); margin-top: 0.25rem;">
+            Plan Your Uttarandhra Journey
+          </h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Get verified local drivers, certified guides, and customized tour packages for Vizag, Vizianagaram, and Srikakulam.
+          </p>
+        </div>
+
+        <form id="booking-inquiry-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="booking-name-input" class="form-control" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="booking-phone-input" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label>Email Address *</label>
+            <input type="email" id="booking-email-input" class="form-control" placeholder="name@example.com" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div class="form-group">
+              <label>Primary Focus</label>
+              <select id="booking-city-select" class="form-control">
+                <option value="all">All 3 Districts Circuit</option>
+                <option value="visakhapatnam">Visakhapatnam & Araku</option>
+                <option value="vizianagaram">Vizianagaram & Bobbili</option>
+                <option value="srikakulam">Srikakulam Temples</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Trip Duration</label>
+              <select id="booking-days-input" class="form-control">
+                <option value="2">2 Days Weekend</option>
+                <option value="3" selected>3 Days Standard</option>
+                <option value="5">5 Days Grand Tour</option>
+                <option value="7">7 Days Explorer</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="form-group">
+              <label>Number of Guests</label>
+              <input type="number" id="booking-guests-input" class="form-control" value="2" min="1" max="25">
+            </div>
+            <div class="form-group">
+              <label>Estimated Package</label>
+              <div id="booking-est-price" style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary); padding: 0.6rem 0;">
+                ₹13,200
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fas fa-paper-plane"></i> Request Custom Travel Quote
+          </button>
+        </form>
+
+        <div id="booking-confirmation-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WISHLIST SLIDE-OVER DRAWER ================= -->
+  <aside class="wishlist-drawer" id="wishlist-drawer">
+    <div class="wishlist-header">
+      <div class="wishlist-title">
+        <i class="fas fa-heart" style="color: var(--color-accent);"></i>
+        <span>Saved Destinations</span>
+      </div>
+      <button id="wishlist-close-btn" style="font-size: 1.25rem; color: var(--text-secondary);" aria-label="Close Wishlist">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="wishlist-body" id="wishlist-items-container">
+      <!-- Injected via js/main.js -->
+    </div>
+  </aside>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Uttarandhra Odyssey</h2>
+          <p>
+            Your ultimate interactive digital guide to the coast, heritage, and spiritual marvels of North Coastal Andhra Pradesh. Exploring Visakhapatnam, Vizianagaram, and Srikakulam.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <a href="#" class="action-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="action-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="action-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="action-btn" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="visakhapatnam.html">Visakhapatnam Guide</a></li>
+            <li><a href="vizianagaram.html">Vizianagaram Guide</a></li>
+            <li><a href="srikakulam.html">Srikakulam Guide</a></li>
+            <li><a href="visakhapatnam.html#araku">Araku Valley Gateway</a></li>
+            <li><a href="vizianagaram.html#bobbili">Bobbili Heritage</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Planning Tools</h4>
+          <ul class="footer-links">
+            <li><a href="itinerary.html">Custom Trip Planner</a></li>
+            <li><a href="culture.html">Culture & GI Crafts</a></li>
+            <li><a href="culture.html#food">Regional Gastronomy</a></li>
+            <li><a href="#" data-trigger-booking>Guided Tour Inquiry</a></li>
+            <li><a href="#explorer-section">All Attractions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4 class="footer-title">Travel Assistance</h4>
+          <p><i class="fas fa-phone-alt"></i> AP Tourism Toll Free: 1800-425-45454</p>
+          <p><i class="fas fa-envelope"></i> help@uttarandhraodyssey.com</p>
+          <p><i class="fas fa-map-pin"></i> Beach Road, Visakhapatnam, Andhra Pradesh</p>
+          <p style="font-size: 0.8rem; color: #64748b; margin-top: 1rem;">
+            Emergency Contacts: Police 112 | Coastal Guard 1554 | Ambulance 108
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Uttarandhra Odyssey. Created for pair programming travel experience.</p>
+        <p>Built with clean HTML5, modern CSS3 & vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
